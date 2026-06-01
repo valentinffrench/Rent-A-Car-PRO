@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse public | Where-Object { -not $_.PSIsContainer } | Select-Object -ExpandProperty FullName | ForEach-Object { $_.Replace\\(\\(Get-Location\\).Path + \"\\\\\", \"\"\\) } | Sort-Object)",
+      "PowerShell(Remove-Item \".\\\\images\" -Recurse -Force -Confirm:$false)",
+      "PowerShell(Remove-Item \".\\\\rac-red-pin.png\" -Force -Confirm:$false)",
+      "PowerShell(Remove-Item \".\\\\VAG Rounded Bold_0.ttf\" -Force -Confirm:$false)"
+    ]
+  }
+}

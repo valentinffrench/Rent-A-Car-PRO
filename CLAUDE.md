@@ -7,7 +7,7 @@ Single-page French marketing site for **Rent-A-Car PRO**, the B2B vehicle rental
 **Target URL**: `https://pro.rentacarguadeloupe.fr` (Cloudflare Pages, subdomain CNAME)
 
 **Owner**: Valentin Ffrench, Directeur d'exploitation, CaribeCar SAS — valentin.ffrench@gbh.fr
-**Commercial contact on page**: Benjamin Jollois — +590 690 64 94 74 — benjamin.jollois@gbh.fr
+**Commercial contact** (internal — **not shown on the page**): Benjamin Jollois — benjamin.jollois@gbh.fr. His name, personal phone and email were removed from the page per owner request. The page captures leads via the Zoho form + the company standard line **0590 47 59 05** only.
 
 ---
 
@@ -58,7 +58,9 @@ The main HTML file is currently named `rentacar-pro-landing.html` — it must be
 **Border radius**: 8px (`rounded-lg`) across all cards and buttons. Decorative dots and pill badges keep `rounded-full`.
 
 **Custom CSS classes — do not remove or rename:**
-`.display`, `.hl-underline`, `.step-num`, `.fade-up`, `.is-visible`, `.grain`, `.cta-primary`, `.cta-secondary`, `.tier-card`, `.badge`, `.rule`, `.rule-strong`
+`.display`, `.step-num`, `.fade-up`, `.is-visible`, `.grain`, `.cta-primary`, `.tier-card`, `.badge`, `.rule`, `.rule-strong`
+
+> `.hl-underline` was removed (deemed off-brand by owner). `.cta-secondary` was removed (no longer referenced). Do not reintroduce either.
 
 **Icons** (in `/icons/` folder):
 - `frame_82_3x_ac67c28dd3.png` — savings/euro hand → Tarification sur-mesure
@@ -79,8 +81,8 @@ The main HTML file is currently named `rentacar-pro-landing.html` — it must be
 2. **"Tarifs garantis 12 mois"** with its asterisk footnote `"Du 1er janvier au 31 décembre de l'année en cours."` must remain wherever it appears.
 3. **Brand name** is always `Rent-A-Car PRO` — hyphen, capital P and C, no variations.
 4. **VAT rate** is `8,5%` (Guadeloupe DOM rate) — never `20%`.
-5. **Contact details** (Benjamin Jollois name, phone, email) are live — do not alter.
-6. **Page narrative order** must stay: constat → offre → avantages → gamme → comparatif → tarifs → process → contact.
+5. **No personal contact on the page** — Benjamin Jollois' name, his personal phone (+590 690 64 94 74) and email (benjamin.jollois@gbh.fr) must NOT appear in visible text, links, alt or aria. Lead capture is the Zoho form; the only phone shown is the company standard line **0590 47 59 05**.
+6. **Page narrative order** must stay: constat → offre → avantages → gamme → comparatif → tarifs → process → contact. NOTE: in `rentacar-pro-landing-conversion.html`, the **constat**, **comparatif** and **tarifs** sections are currently hidden via the `hidden` attribute (retained in markup, not deleted) — keep them in this order if/when un-hidden.
 
 ---
 
@@ -114,6 +116,7 @@ The main HTML file is currently named `rentacar-pro-landing.html` — it must be
 - [ ] **Logo**: Replace text fallback in `<header>` and footer with `<img src="/logo-rentacar.svg">`
 - [ ] **OG image**: Create 1200×630 image, deploy as `/og.jpg`, uncomment the `<meta>` tag in `<head>`
 - [ ] **Vehicle photos**: Optional — add one photo per category in "Notre gamme" section
+- [ ] **Client logos**: Strip lives after the hero (`images/clients_logo/`), shown grayscale → colour on hover. `CJ_ANTILLES.jpg` and `SAMSIC ASSISTANCE CARAIBES.jpg` are JPEGs with solid backgrounds and render unevenly — replace with transparent PNG/SVG when available. Confirm the `LOGO_2.avif` brand ("NEV") and get written consent to display each client's logo.
 - [ ] **Rename file**: `rentacar-pro-landing.html` → `index.html` before Cloudflare upload
 - [ ] **Legal links**: Footer `href="#"` for Mentions légales / Confidentialité / CGV — fill when pages are ready
 
