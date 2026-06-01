@@ -13,4 +13,4 @@ desktop.ini
 .cloudflare/
 
 # Sandbox artefact — original asset copies (content lives in public/)
-icons/
+/icons/
