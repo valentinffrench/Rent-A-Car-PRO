@@ -138,6 +138,6 @@ SSL is automatic via Cloudflare. Propagation: 15–60 min.
 
 ## Company Info (for footer/legal copy)
 
-**CaribeCar SAS** — Aéroport Pôle Caraïbes — Morne Mamiel — 97139 Les Abymes
-SIRET: 442 315 503 00031 · Standard: 0590 47 59 05
+**CaribeCar SAS** — Aéroport Maryse Condé — Morne Mamiel — 97139 Les Abymes
+SIRET: 442 315 503 00031 · Standard: +590 590 47 59 05
 Filiale du Groupe GBH
