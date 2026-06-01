@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent-A-Car PRO Guadeloupe — La mobilité professionnelle sur-mesure</title>
+  <meta name="description" content="Rent-A-Car PRO Guadeloupe : location de véhicules et utilitaires pour les entreprises. Tarification sur-mesure, contact dédié, 3 niveaux de partenariat, tarifs garantis 12 mois.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rent-A-Car PRO Guadeloupe">
+  <meta property="og:description" content="La mobilité professionnelle qui s'adapte à votre activité. Tarification sur-mesure et tarifs garantis 12 mois.">
+  <meta property="og:url" content="https://pro.rentacarguadeloupe.fr">
+  <!-- <meta property="og:image" content="https://pro.rentacarguadeloupe.fr/og.jpg"> À CRÉER -->
+
+  <!-- Fonts: VAG Rounded Bold (local) + Helvetica system stack -->
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0D2F5C',
+            navydark: '#081F40',
+            racred: '#E30613',
+            cream: '#F7F7F7',
+            ink: '#1A1A1A',
+            bronze: '#A86E3C',
+            argent: '#9CA3AF',
+            gold: '#C9A961',
+            mute: '#6B7280',
+          },
+          fontFamily: {
+            display: ['"VAG Rounded"', '"VAG Rounded Bold"', 'system-ui', 'sans-serif'],
+            sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'VAG Rounded';
+      src: url('VAG Rounded Bold_0.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #F7F7F7;
+      color: #1A1A1A;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* VAG Rounded: h1, h2, step numbers only */
+    h1, h1.display, h2, h2.display, .step-num {
+      font-family: 'VAG Rounded', 'VAG Rounded Bold', system-ui, sans-serif;
+    }
+    /* All other .display elements: Helvetica Bold */
+    .display { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; }
+    .hl-underline {
+      background-image: linear-gradient(180deg, transparent 65%, rgba(227,6,19,0.18) 65%);
+      background-repeat: no-repeat;
+    }
+    .rule { border-top: 1px solid rgba(13,47,92,0.12); }
+    .rule-strong { border-top: 1px solid rgba(13,47,92,0.32); }
+    .step-num {
+      font-family: 'VAG Rounded', 'VAG Rounded Bold', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: clamp(4rem, 10vw, 8rem);
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      color: #0D2F5C;
+      opacity: 0.14;
+    }
+    .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.7s cubic-bezier(0.22,1,0.36,1); }
+    .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content:""; position:absolute; left:0; bottom:-4px;
+      width:0; height:1px; background:rgba(255,255,255,0.7); transition:width .3s ease;
+    }
+    .nav-link:hover::after { width:100%; }
+    .cta-primary {
+      background:#E30613; color:white; transition:background .2s ease, transform .15s ease;
+    }
+    .cta-primary:hover { background:#B70410; transform: translateY(-1px); }
+    .cta-secondary {
+      border:1px solid #0D2F5C; color:#0D2F5C; transition:background .2s ease;
+    }
+    .cta-secondary:hover { background:#0D2F5C; color:white; }
+    .tier-card { transition: transform .25s ease, box-shadow .25s ease; }
+    .tier-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px -10px rgba(13,47,92,0.18); }
+    .badge {
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.35rem .75rem; border:1px solid rgba(13,47,92,0.2);
+      border-radius:9999px; font-size:.75rem; letter-spacing:.04em;
+      text-transform:uppercase; color:#0D2F5C; background:rgba(255,255,255,0.6);
+    }
+    .badge-dot { width:6px; height:6px; border-radius:9999px; background:#E30613; }
+
+    /* Subtle paper grain */
+    .grain {
+      background-image: radial-gradient(rgba(13,47,92,0.03) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+    .zoho-input {
+      width: 100%; padding: .625rem .75rem; font-size: .875rem;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      border: 1px solid rgba(13,47,92,0.2); border-radius: 8px;
+      background: #fff; color: #1A1A1A; outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .zoho-input::placeholder { color: rgba(107,114,128,0.6); }
+    .zoho-input:focus {
+      border-color: #0072BC;
+      box-shadow: 0 0 0 3px rgba(0,114,188,0.12);
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  NAV                                                         ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<header class="border-b border-white/20 bg-[#0072BC] sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <img src="images/Logo Rent-A-Car PRO.png" alt="Rent-A-Car PRO" class="h-10 w-auto">
+      <span class="text-white/60 text-xs uppercase tracking-widest border-l border-white/25 pl-3">Guadeloupe</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a href="#avantages" class="nav-link text-white/80">Avantages</a>
+      <a href="#gamme" class="nav-link text-white/80">Gamme</a>
+      <a href="#tarifs" class="nav-link text-white/80">Forfaits</a>
+      <a href="#process" class="nav-link text-white/80">Ouvrir un compte</a>
+      <a href="#hero-form" class="nav-link text-white/80">Devis</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  HERO                                                        ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section class="relative grain">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28 grid lg:grid-cols-3 gap-10 lg:gap-12 items-start">
+    <div class="fade-up lg:col-span-1 flex flex-col gap-6">
+      <!-- Copy -->
+      <div>
+        <h1 class="display font-bold text-navy leading-[0.95] tracking-tight text-[clamp(2.25rem,3.6vw,3.25rem)] mb-4">
+          La mobilité <span class="hl-underline">professionnelle</span> qui s'adapte à votre activité.
+        </h1>
+        <p class="text-base text-ink/75 leading-relaxed">
+          Tarification sur-mesure, contact dédié et gamme complète pour les entreprises de Guadeloupe et de Martinique.
+        </p>
+      </div>
+      <!-- Businessman photo -->
+      <div class="rounded-lg overflow-hidden hidden lg:block flex-1">
+        <img src="images/people/2026-05-29 - business man.jpg"
+             alt="Dirigeant d'entreprise en Guadeloupe"
+             class="w-full h-full object-cover object-center" style="min-height:220px">
+      </div>
+    </div>
+
+    <div class="fade-up lg:col-span-2" id="hero-form">
+      <div class="border border-navy/15 rounded-lg bg-white px-6 py-6 md:px-8 md:py-7 shadow-sm">
+        <div class="text-xs uppercase tracking-widest text-mute mb-2">Accès PRO</div>
+        <div class="font-bold text-navy text-xl mb-6">Demander un devis personnalisé</div>
+
+        <!-- Zoho CRM Web-to-Lead form -->
+        <div id="crmWebToEntityForm" class="crmWebToEntityForm">
+          <form id="webform7415601000000606396"
+                action="https://crm.zoho.com/crm/WebToLeadForm"
+                name="WebToLeads7415601000000606396"
+                method="POST"
+                onsubmit="javascript:document.charset='UTF-8'; return checkMandatory7415601000000606396()"
+                accept-charset="UTF-8"
+                novalidate>
+            <!-- Zoho required hidden fields — do not remove -->
+            <input type="text" style="display:none;" name="xnQsjsdp" value="6f78dadbaa38e322d304bbb945eaa388ff5031eb065b35d5c5872f3139cd06c0">
+            <input type="hidden" name="zc_gad" id="zc_gad" value="">
+            <input type="text" style="display:none;" name="xmIwtLD" value="806ab2fdfa3a85e110df8242d853960af70620573a106b8e8310e3244dc9888d83a2b9374ea013d5e0df0a082797cb96">
+            <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
+            <input type="text" style="display:none;" name="returnURL" value="null">
+            <input type="hidden" name="aG9uZXlwb3Q" value="" style="display:none;">
+
+            <div class="space-y-4">
+              <!-- Raison sociale -->
+              <div>
+                <label for="Company" class="block text-sm font-semibold text-navy mb-1.5">
+                  Raison sociale <span class="text-racred">*</span>
+                </label>
+                <input type="text" id="Company" name="Company"
+                       aria-required="true" maxlength="200"
+                       placeholder="Nom de votre société"
+                       class="zoho-input">
+              </div>
+              <!-- Nom + Prénom -->
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label for="Last_Name" class="block text-sm font-semibold text-navy mb-1.5">
+                    Nom <span class="text-racred">*</span>
+                  </label>
+                  <input type="text" id="Last_Name" name="Last Name"
+                         aria-required="true" maxlength="80"
+                         placeholder="Votre nom"
+                         class="zoho-input">
+                </div>
+                <div>
+                  <label for="First_Name" class="block text-sm font-semibold text-navy mb-1.5">Prénom</label>
+                  <input type="text" id="First_Name" name="First Name"
+                         maxlength="40"
+                         placeholder="Votre prénom"
+                         class="zoho-input">
+                </div>
+              </div>
+              <!-- E-mail + Téléphone -->
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label for="Email" class="block text-sm font-semibold text-navy mb-1.5">E-mail</label>
+                  <input type="email" ftype="email" id="Email" name="Email"
+                         autocomplete="email" maxlength="100"
+                         placeholder="vous@société.fr"
+                         class="zoho-input">
+                </div>
+                <div>
+                  <label for="Mobile" class="block text-sm font-semibold text-navy mb-1.5">Téléphone</label>
+                  <input type="tel" id="Mobile" name="Mobile"
+                         maxlength="30"
+                         placeholder="+590 6xx xx xx xx"
+                         class="zoho-input">
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="mt-6">
+              <button type="submit" id="formsubmit"
+                      class="formsubmit cta-primary w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-lg disabled:opacity-60 disabled:cursor-not-allowed">
+                Envoyer ma demande
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+
+            <p class="text-xs text-mute mt-4 leading-relaxed">
+              Réponse sous 24 h ouvrées. Vos données sont utilisées uniquement pour traiter votre demande, conformément à notre politique de confidentialité.
+            </p>
+
+            <script>
+              function validateEmail7415601000000606396(){
+                var form=document.forms['WebToLeads7415601000000606396'];
+                var emailFld=form.querySelectorAll('[ftype=email]');
+                for(var i=0;i<emailFld.length;i++){
+                  var v=emailFld[i].value;
+                  if((v.replace(/^\s+|\s+$/g,'')).length!=0){
+                    var a=v.indexOf('@'),d=v.lastIndexOf('.');
+                    if(a<1||d<a+2||d+2>=v.length){alert('Veuillez entrer une adresse e-mail valide.');emailFld[i].focus();return false;}
+                  }
+                }
+                return true;
+              }
+              function checkMandatory7415601000000606396(){
+                var mnd=['Company','Last Name'],lbl=['Raison Sociale','Nom'];
+                for(var i=0;i<mnd.length;i++){
+                  var f=document.forms['WebToLeads7415601000000606396'][mnd[i]];
+                  if(f&&(f.value.replace(/^\s+|\s+$/g,'')).length==0){
+                    alert(lbl[i]+' ne peut pas être vide.');f.focus();return false;
+                  }
+                }
+                if(!validateEmail7415601000000606396())return false;
+                document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled',true);
+              }
+            </script>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  TRUST STRIP                                                 ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section class="bg-navy text-white" style="display:none">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 py-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm">
+    <span class="opacity-70">Aéroport Pôle Caraïbes</span>
+    <span class="opacity-40">·</span>
+    <span class="opacity-70">Marque Rent-A-Car</span>
+    <span class="opacity-40">·</span>
+    <span class="opacity-70">Groupe GBH</span>
+    <span class="opacity-40">·</span>
+    <span class="opacity-70">CaribeCar SAS</span>
+    <span class="opacity-40">·</span>
+    <span class="opacity-70">SIRET 442 315 503 00031</span>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  LE CONSTAT                                                  ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section class="py-20 md:py-28" style="display:none">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5 fade-up">
+      <div class="text-mute text-xs uppercase tracking-widest mb-4">Le constat</div>
+      <h2 class="display text-navy font-bold text-3xl md:text-5xl leading-[1.05] tracking-tight">
+        En Guadeloupe, la mobilité de votre entreprise mérite mieux qu'un compromis.
+      </h2>
+    </div>
+    <div class="md:col-span-7 fade-up">
+      <ul class="space-y-5 text-lg">
+        <li class="flex gap-4 items-start pb-5 rule">
+          <span class="display text-racred font-bold mt-1">—</span>
+          <span>Une <strong>flotte à entretenir</strong>, à immobiliser, à amortir, à assurer.</span>
+        </li>
+        <li class="flex gap-4 items-start pb-5 rule">
+          <span class="display text-racred font-bold mt-1">—</span>
+          <span>Des <strong>pics d'activité</strong> qui exigent un ou plusieurs véhicules supplémentaires.</span>
+        </li>
+        <li class="flex gap-4 items-start pb-5 rule">
+          <span class="display text-racred font-bold mt-1">—</span>
+          <span>Des <strong>urgences</strong> — panne, intervention, déplacement client — sans solution prête.</span>
+        </li>
+        <li class="flex gap-4 items-start pb-5 rule">
+          <span class="display text-racred font-bold mt-1">—</span>
+          <span>Des <strong>frais de mobilité</strong> difficiles à anticiper et à maîtriser.</span>
+        </li>
+        <li class="flex gap-4 items-start">
+          <span class="display text-racred font-bold mt-1">—</span>
+          <span>Un <strong>manque d'interlocuteur</strong> lorsque vous en avez réellement besoin.</span>
+        </li>
+      </ul>
+      <p class="display text-navy font-semibold text-xl md:text-2xl mt-10 leading-snug">
+        Rent-A-Car PRO transforme la location en <span class="hl-underline">levier</span> de votre activité.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  L'OFFRE EN BREF                                             ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section class="bg-navy text-white py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="max-w-3xl mb-14 fade-up">
+      <div class="text-white/60 text-xs uppercase tracking-widest mb-4">L'offre Rent-A-Car PRO</div>
+      <h2 class="display font-bold text-3xl md:text-5xl leading-[1.05] tracking-tight">
+        Une offre B2B pensée pour les entreprises de Guadeloupe.
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-px bg-white/10 rounded-lg overflow-hidden">
+      <div class="bg-navy p-8 fade-up">
+        <div class="display text-white/30 font-bold text-2xl mb-6">01</div>
+        <h3 class="display font-semibold text-lg mb-3">Un contact dédié</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Benjamin Jollois, votre interlocuteur direct, de l'ouverture du compte à chaque location.</p>
+      </div>
+      <div class="bg-navy p-8 fade-up">
+        <div class="display text-white/30 font-bold text-2xl mb-6">02</div>
+        <h3 class="display font-semibold text-lg mb-3">Grille sur-mesure</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Tarification négociée selon votre profil, votre volume et votre engagement.</p>
+      </div>
+      <div class="bg-navy p-8 fade-up">
+        <div class="display text-white/30 font-bold text-2xl mb-6">03</div>
+        <h3 class="display font-semibold text-lg mb-3">Facturation simplifiée</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Compte société, bon de commande, règlement à 30 jours possible.</p>
+      </div>
+      <div class="bg-navy p-8 fade-up">
+        <div class="display text-white/30 font-bold text-2xl mb-6">04</div>
+        <h3 class="display font-semibold text-lg mb-3">Gamme complète</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Du citadin à l'utilitaire 13 m³, en passant par hybrides, électriques et pickups.</p>
+      </div>
+      <div class="bg-navy p-8 fade-up">
+        <div class="display text-white/30 font-bold text-2xl mb-6">05</div>
+        <h3 class="display font-semibold text-lg mb-3">Couverture totale</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Maintenance, assistance 24/7, assurance et véhicule de remplacement inclus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  7 AVANTAGES                                                 ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section id="avantages" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid md:grid-cols-12 gap-10 mb-14">
+      <div class="md:col-span-5 fade-up">
+        <div class="text-mute text-xs uppercase tracking-widest mb-4">Avantages exclusifs</div>
+        <h2 class="display text-navy font-bold text-3xl md:text-5xl leading-[1.05] tracking-tight">
+          7 avantages réservés aux comptes PRO.
+        </h2>
+      </div>
+      <div class="md:col-span-6 md:col-start-7 fade-up">
+        <p class="text-lg text-ink/75 leading-relaxed">Chaque compte PRO bénéficie d'un socle d'avantages immédiats — au-delà des conditions tarifaires personnalisées.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-navy/10 border border-navy/10 rounded-lg overflow-hidden">
+      <div class="bg-cream p-8 fade-up">
+        <img src="icons/frame_82_3x_ac67c28dd3.png" alt="" class="h-14 w-auto mb-5" aria-hidden="true">
+        <div class="flex items-start gap-2 mb-3">
+          <img src="rac-red-pin.png" alt="" class="h-5 w-auto mt-0.5 flex-shrink-0" aria-hidden="true">
+          <h3 class="font-bold text-navy text-base leading-snug">Tarification sur-mesure</h3>
+        </div>
+        <p class="text-ink/70 text-sm leading-relaxed">3 niveaux de partenariat — Bronze, Argent, Gold — + remise engagement 12 mois.</p>
+      </div>
+      <div class="bg-cream p-8 fade-up">
+        <img src="icons/frame_82_3x_2_3392cf1129.png" alt="" class="h-14 w-auto mb-5" aria-hidden="true">
+        <div class="flex items-start gap-2 mb-3">
+          <img src="rac-red-pin.png" alt="" class="h-5 w-auto mt-0.5 flex-shrink-0" aria-hidden="true">
+          <h3 class="font-bold text-navy text-base leading-snug">Catégorie garantie</h3>
+        </div>
+        <p class="text-ink/70 text-sm leading-relaxed">La catégorie réservée est la catégorie livrée. Plus de surprise « ou similaire ».</p>
+      </div>
+      <div class="bg-cream p-8 fade-up">
+        <img src="icons/flexibilit_3x_1_6e53bab9db.png" alt="" class="h-14 w-auto mb-5" aria-hidden="true">
+        <div class="flex items-start gap-2 mb-3">
+          <img src="rac-red-pin.png" alt="" class="h-5 w-auto mt-0.5 flex-shrink-0" aria-hidden="true">
+          <h3 class="font-bold text-navy text-base leading-snug">2 h de battement</h3>
+        </div>
+        <p class="text-ink/70 text-sm leading-relaxed">120 minutes de tolérance au retour, vs 59 minutes en tarif public.</p>
+      </div>
+      <div class="bg-cream p-8 fade-up">
+        <img src="icons/frame_82_3x_3_bc937ab739.png" alt="" class="h-14 w-auto mb-5" aria-hidden="true">
+        <div class="flex items-start gap-2 mb-3">
+          <img src="rac-red-pin.png" alt="" class="h-5 w-auto mt-0.5 flex-shrink-0" aria-hidden="true">
+          <h3 class="font-bold text-navy text-base leading-snug">Service VIP offert</h3>
+        </div>
+        <p class="text-ink/70 text-sm leading-relaxed">Coupe-file et remise des clés accélérée à l'aéroport (50 € en standard).</p>
+      </div>
+      <div class="bg-cream p-8 fade-up">
+        <img src="icons/frame_82_3x_4_999bfaed7e.png" alt="" class="h-14 w-auto mb-5" aria-hidden="true">
+        <div class="flex items-start gap-2 mb-3">
+          <img src="rac-red-pin.png" alt="" class="h-5 w-auto mt-0.5 flex-shrink-0" aria-hidden="true">
+          <h3 class="font-bold text-navy text-base leading-snug">Conducteur additionnel offert</h3>
+        </div>
+        <p class="text-ink/70 text-sm leading-relaxed">Économie de 6 € / jour vs tarif public, sur toute la durée de la location.</p>
+      </div>
+      <div class="bg-cream p-8 fade-up">
+        <img src="icons/frame_82_3x_1_46438ca90a.png" alt="" class="h-14 w-auto mb-5" aria-hidden="true">
+        <div class="flex items-start gap-2 mb-3">
+          <img src="rac-red-pin.png" alt="" class="h-5 w-auto mt-0.5 flex-shrink-0" aria-hidden="true">
+          <h3 class="font-bold text-navy text-base leading-snug">Livraison & reprise sur site</h3>
+        </div>
+        <p class="text-ink/70 text-sm leading-relaxed">Selon zone géographique et catégorie de véhicule, à votre adresse.</p>
+      </div>
+      <div class="bg-cream p-8 fade-up">
+        <img src="icons/accompagnement_3x_1_0c0244d429.png" alt="" class="h-14 w-auto mb-5" aria-hidden="true">
+        <div class="flex items-start gap-2 mb-3">
+          <img src="rac-red-pin.png" alt="" class="h-5 w-auto mt-0.5 flex-shrink-0" aria-hidden="true">
+          <h3 class="font-bold text-navy text-base leading-snug">Interlocuteur dédié</h3>
+        </div>
+        <p class="text-ink/70 text-sm leading-relaxed">Un seul contact pour vos réservations, vos litiges, votre facturation.</p>
+      </div>
+      <div class="bg-navy p-8 fade-up flex flex-col justify-between">
+        <div class="font-bold text-white text-lg leading-snug">Et toujours inclus.</div>
+        <ul class="text-white/80 text-sm space-y-2 mt-6">
+          <li>· Maintenance</li>
+          <li>· Assistance 24/7</li>
+          <li>· Assurance tous risques</li>
+          <li>· Véhicule de remplacement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  AUDIENCE BREAK                                              ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section class="overflow-hidden bg-navy">
+  <div class="grid lg:grid-cols-2">
+    <!-- Photo side -->
+    <div class="relative min-h-[320px] lg:min-h-[520px] order-2 lg:order-1">
+      <img src="images/people/2026-05-29 - professional worker.jpg"
+           alt="Technicien avec son utilitaire Rent-A-Car PRO"
+           class="absolute inset-0 w-full h-full object-cover object-center">
+    </div>
+    <!-- Text side -->
+    <div class="order-1 lg:order-2 flex flex-col justify-center px-8 py-14 md:px-14 lg:px-16 lg:py-20">
+      <div class="text-white/50 text-xs uppercase tracking-widest mb-4">Pour tous les pros</div>
+      <h2 class="text-white font-bold text-3xl md:text-4xl leading-[1.05] tracking-tight mb-6">
+        Des véhicules pensés<br>pour le terrain.
+      </h2>
+      <p class="text-white/75 text-base leading-relaxed mb-8">
+        Que vous gériez une flotte d'entreprise ou que vous soyez sur le terrain chaque matin, Rent-A-Car PRO s'adapte à votre activité.
+      </p>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-center gap-3 text-white/80">
+          <span class="w-1.5 h-1.5 rounded-full bg-racred flex-shrink-0"></span>
+          Dirigeants & responsables d'exploitation
+        </li>
+        <li class="flex items-center gap-3 text-white/80">
+          <span class="w-1.5 h-1.5 rounded-full bg-racred flex-shrink-0"></span>
+          Artisans, installateurs & techniciens SAV
+        </li>
+        <li class="flex items-center gap-3 text-white/80">
+          <span class="w-1.5 h-1.5 rounded-full bg-racred flex-shrink-0"></span>
+          BTP, maintenance & services aux entreprises
+        </li>
+        <li class="flex items-center gap-3 text-white/80">
+          <span class="w-1.5 h-1.5 rounded-full bg-racred flex-shrink-0"></span>
+          Commerciaux en déplacement & équipes terrain
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  NOTRE GAMME                                                 ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section id="gamme" class="py-20 md:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="max-w-3xl mb-14 fade-up">
+      <div class="text-mute text-xs uppercase tracking-widest mb-4">Notre gamme</div>
+      <h2 class="display text-navy font-bold text-3xl md:text-5xl leading-[1.05] tracking-tight">
+        Une gamme adaptée à chaque usage professionnel.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="fade-up">
+        <div class="bg-white rounded-lg mb-6 overflow-hidden" style="aspect-ratio:16/9">
+          <img src="images/vehicle/cat1.jpg" alt="Voitures particulières Rent-A-Car PRO — Renault Clio, R5, Audi Q2" class="w-full h-full object-contain" loading="lazy">
+        </div>
+        <div class="border-t-2 border-navy pt-6">
+          <div class="text-xs uppercase tracking-widest text-mute mb-3">Catégorie 01</div>
+          <h3 class="display text-navy font-bold text-2xl mb-4">Voitures particulières</h3>
+          <p class="text-ink/75 mb-5 leading-relaxed">Du citadin économique à la berline confort, en automatique ou manuelle — essence, diesel, hybride ou électrique.</p>
+          <div class="text-sm text-ink/60 leading-relaxed">
+            Hyundai i10 · Dacia Sandero · Renault Clio 5 · Renault R5 électrique · Renault Captur · Toyota RAV4 Hybride · Audi Q2.
+          </div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <div class="bg-white rounded-lg mb-6 overflow-hidden" style="aspect-ratio:16/9">
+          <img src="images/vehicle/cat2.jpg" alt="Véhicules spécifiques Rent-A-Car PRO — Dacia Duster, SUV, Trafic" class="w-full h-full object-contain" loading="lazy">
+        </div>
+        <div class="border-t-2 border-navy pt-6">
+          <div class="text-xs uppercase tracking-widest text-mute mb-3">Catégorie 02</div>
+          <h3 class="display text-navy font-bold text-2xl mb-4">Véhicules spécifiques</h3>
+          <p class="text-ink/75 mb-5 leading-relaxed">SUV, monospaces 7 places, ludospaces, minibus 9 places — pour vos déplacements en équipe, transferts et missions de terrain.</p>
+          <div class="text-sm text-ink/60 leading-relaxed">
+            Dacia Duster · Dacia Lodgy · Dacia Jogger · Renault Trafic 9 places.
+          </div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <div class="bg-white rounded-lg mb-6 overflow-hidden" style="aspect-ratio:16/9">
+          <img src="images/vehicle/cat3.jpg" alt="Utilitaires Rent-A-Car PRO — Toyota Proace, Renault Master, Iveco Daily" class="w-full h-full object-contain" loading="lazy">
+        </div>
+        <div class="border-t-2 border-navy pt-6">
+          <div class="text-xs uppercase tracking-widest text-mute mb-3">Catégorie 03</div>
+          <h3 class="display text-navy font-bold text-2xl mb-4">Utilitaires & pickups</h3>
+          <p class="text-ink/75 mb-5 leading-relaxed">De la camionnette 3 m³ au grand fourgon 13 m³, plus benne double essieux et pickup double cabine.</p>
+          <div class="text-sm text-ink/60 leading-relaxed">
+            Toyota ProAce City 3 m³ · ProAce 5 m³ · Renault Master 11 m³ et 13 m³ · Iveco Daily Benne · Toyota Hilux.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  COMPARATIF PUBLIC vs PRO                                    ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section class="py-20 md:py-28" style="display:none">
+  <div class="max-w-5xl mx-auto px-6 md:px-10">
+    <div class="grid md:grid-cols-12 gap-10 mb-12 items-end">
+      <div class="md:col-span-7 fade-up">
+        <div class="text-mute text-xs uppercase tracking-widest mb-4">Comparatif</div>
+        <h2 class="display text-navy font-bold text-3xl md:text-5xl leading-[1.05] tracking-tight">
+          Ce que vous économisez à chaque location.
+        </h2>
+      </div>
+      <div class="md:col-span-5 fade-up">
+        <p class="text-ink/75 leading-relaxed">
+          Sept postes de coût concrets sur lesquels nos clients PRO bénéficient d'un tarif négocié, d'un service offert, ou d'une marge opérationnelle supplémentaire.
+        </p>
+      </div>
+    </div>
+
+    <!-- KPI strip -->
+    <div class="grid md:grid-cols-3 gap-px bg-navy/10 border border-navy/10 rounded-lg overflow-hidden mb-12 fade-up">
+      <div class="bg-white p-6 md:p-7">
+        <div class="display text-racred font-bold text-3xl md:text-4xl tracking-tight leading-none mb-2">100 €+</div>
+        <div class="text-xs uppercase tracking-widest text-mute mb-1">Avantages cumulables</div>
+        <div class="text-sm text-ink/70 leading-relaxed">Service VIP + nettoyage + refuelling + parking, économisés à chaque location.</div>
+      </div>
+      <div class="bg-white p-6 md:p-7">
+        <div class="display text-racred font-bold text-3xl md:text-4xl tracking-tight leading-none mb-2">2×</div>
+        <div class="text-xs uppercase tracking-widest text-mute mb-1">Battement horaire</div>
+        <div class="text-sm text-ink/70 leading-relaxed">120 min de tolérance au retour, contre 59 min en tarif public.</div>
+      </div>
+      <div class="bg-white p-6 md:p-7">
+        <div class="display text-racred font-bold text-3xl md:text-4xl tracking-tight leading-none mb-2">0 €</div>
+        <div class="text-xs uppercase tracking-widest text-mute mb-1">Conducteur additionnel</div>
+        <div class="text-sm text-ink/70 leading-relaxed">Offert sur toute la durée, vs 6 € / jour facturés en tarif public.</div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="fade-up">
+      <div class="grid grid-cols-[1.5fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr] gap-4 py-4 rule-strong">
+        <div class="text-xs uppercase tracking-widest text-mute">Service</div>
+        <div class="text-xs uppercase tracking-widest text-mute text-right">Tarif Public</div>
+        <div class="text-xs uppercase tracking-widest text-racred text-right font-semibold">Tarif PRO</div>
+      </div>
+      <div class="grid grid-cols-[1.5fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr] gap-4 py-5 rule items-center">
+        <div class="text-ink">Service VIP <span class="text-mute text-sm">(coupe-file aéroport)</span></div>
+        <div class="text-ink/60 text-right">50 €</div>
+        <div class="text-right">
+          <div class="text-racred font-semibold">OFFERT</div>
+          <div class="text-[11px] text-mute mt-0.5">−50 € par location</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-[1.5fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr] gap-4 py-5 rule items-center">
+        <div class="text-ink">Conducteur additionnel</div>
+        <div class="text-ink/60 text-right">6 € / jour</div>
+        <div class="text-right">
+          <div class="text-racred font-semibold">OFFERT</div>
+          <div class="text-[11px] text-mute mt-0.5">−6 € / jour</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-[1.5fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr] gap-4 py-5 rule items-center">
+        <div class="text-ink">Battement horaire au retour</div>
+        <div class="text-ink/60 text-right">59 min</div>
+        <div class="text-right">
+          <div class="text-racred font-semibold">120 min</div>
+          <div class="text-[11px] text-mute mt-0.5">+61 min</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-[1.5fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr] gap-4 py-5 rule items-center">
+        <div class="text-ink">Kilométrage inclus <span class="text-mute text-sm">(forfait mensuel)</span></div>
+        <div class="text-ink/60 text-right">—</div>
+        <div class="text-right">
+          <div class="text-racred font-semibold">2 000 km / 30 j</div>
+          <div class="text-[11px] text-mute mt-0.5">puis 0,10 € / km</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-[1.5fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr] gap-4 py-5 rule items-center">
+        <div class="text-ink">Nettoyage intérieur & extérieur</div>
+        <div class="text-ink/60 text-right">50 €</div>
+        <div class="text-right">
+          <div class="text-racred font-semibold">20 €</div>
+          <div class="text-[11px] text-mute mt-0.5">−30 € par location</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-[1.5fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr] gap-4 py-5 rule items-center">
+        <div class="text-ink">Refuelling <span class="text-mute text-sm">(hors carburant)</span></div>
+        <div class="text-ink/60 text-right">20 €</div>
+        <div class="text-right">
+          <div class="text-racred font-semibold">10 €</div>
+          <div class="text-[11px] text-mute mt-0.5">−10 € par location</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-[1.5fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr] gap-4 py-5 rule items-center">
+        <div class="text-ink">Restitution Parking P1</div>
+        <div class="text-ink/60 text-right">25 €</div>
+        <div class="text-right">
+          <div class="text-racred font-semibold">15 €</div>
+          <div class="text-[11px] text-mute mt-0.5">−10 € par location</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Worked example -->
+    <div class="mt-10 fade-up grid md:grid-cols-[1fr_auto] gap-6 items-center bg-navy text-white rounded-lg p-6 md:p-8">
+      <div>
+        <div class="text-white/60 text-xs uppercase tracking-widest mb-2">Exemple chiffré</div>
+        <div class="font-bold text-lg md:text-xl leading-snug mb-2">
+          Location 5 jours avec Service VIP, conducteur additionnel, nettoyage et restitution P1
+        </div>
+        <div class="text-white/70 text-sm leading-relaxed">
+          50 € (VIP) + 30 € (conducteur 5 j) + 30 € (nettoyage) + 10 € (parking) = <strong class="text-white">120 € d'économies réelles</strong> sur cette seule location.
+        </div>
+      </div>
+      <div class="text-left md:text-right md:border-l md:border-white/15 md:pl-8">
+        <div class="display font-bold text-4xl md:text-5xl tracking-tight leading-none" style="color:#E30613">120 €</div>
+        <div class="text-white/60 text-xs uppercase tracking-widest mt-2">Économisés en 5 jours</div>
+      </div>
+    </div>
+
+    <p class="text-xs text-mute mt-6 italic">Tarifs TTC, TVA Guadeloupe 8,5 %. Conditions détaillées dans votre proposition commerciale.</p>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  3 NIVEAUX                                                   ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section id="tarifs" class="py-20 md:py-28 bg-navy text-white" style="display:none">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="max-w-3xl mb-14 fade-up">
+      <div class="text-white/60 text-xs uppercase tracking-widest mb-4">3 niveaux de partenariat</div>
+      <h2 class="display font-bold text-3xl md:text-5xl leading-[1.05] tracking-tight">
+        Une grille, trois niveaux, votre choix.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="tier-card bg-white/5 border border-white/15 rounded-lg p-8 fade-up">
+        <div class="flex items-center justify-between mb-6">
+          <div class="display font-bold text-2xl" style="color:#A86E3C">Bronze</div>
+          <div class="w-2 h-2 rounded-full" style="background:#A86E3C"></div>
+        </div>
+        <p class="text-white/80 leading-relaxed mb-6">Pour les <strong>besoins ponctuels</strong> et l'amorçage d'une relation commerciale.</p>
+        <ul class="text-white/60 text-sm space-y-2 border-t border-white/10 pt-5">
+          <li>· Conditions PRO de base</li>
+          <li>· 7 avantages exclusifs inclus</li>
+          <li>· Sans engagement</li>
+        </ul>
+      </div>
+      <div class="tier-card bg-white/5 border border-white/15 rounded-lg p-8 fade-up">
+        <div class="flex items-center justify-between mb-6">
+          <div class="display font-bold text-2xl" style="color:#C8CDD6">Argent</div>
+          <div class="w-2 h-2 rounded-full" style="background:#C8CDD6"></div>
+        </div>
+        <p class="text-white/80 leading-relaxed mb-6">Pour les <strong>usages réguliers</strong> — meilleur rapport remise / engagement.</p>
+        <ul class="text-white/60 text-sm space-y-2 border-t border-white/10 pt-5">
+          <li>· Remise renforcée</li>
+          <li>· Toutes catégories accessibles</li>
+          <li>· Volumes intermédiaires</li>
+        </ul>
+      </div>
+      <div class="tier-card bg-white/5 border-2 rounded-lg p-8 fade-up relative" style="border-color:#C9A961">
+        <div class="absolute -top-3 right-6 text-[10px] uppercase tracking-widest px-3 py-1 rounded-full" style="background:#C9A961;color:#1A1A1A;font-weight:600">Premium</div>
+        <div class="flex items-center justify-between mb-6">
+          <div class="display font-bold text-2xl" style="color:#C9A961">Gold</div>
+          <div class="w-2 h-2 rounded-full" style="background:#C9A961"></div>
+        </div>
+        <p class="text-white/80 leading-relaxed mb-6">Pour les <strong>comptes stratégiques</strong> et les flottes complémentaires.</p>
+        <ul class="text-white/60 text-sm space-y-2 border-t border-white/10 pt-5">
+          <li>· Remise maximale</li>
+          <li>· Priorité réservation</li>
+          <li>· Accompagnement renforcé</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="border border-white/15 rounded-lg p-6 flex items-start gap-4 fade-up">
+        <div class="display text-racred font-bold text-2xl shrink-0">+</div>
+        <div>
+          <div class="display font-semibold text-lg mb-1">Engagement 12 mois</div>
+          <p class="text-white/70 text-sm leading-relaxed">Remise additionnelle sur les forfaits mensuels en cas d'engagement sur un an ferme.</p>
+        </div>
+      </div>
+      <div class="border border-white/15 rounded-lg p-6 flex items-start gap-4 fade-up">
+        <div class="display text-racred font-bold text-2xl shrink-0">✓</div>
+        <div>
+          <div class="display font-semibold text-lg mb-1">Tarifs garantis 12 mois<sup class="text-racred">*</sup></div>
+          <p class="text-white/70 text-sm leading-relaxed">Pas de variation en cours d'année, même en cas d'évolution du marché.<br><span class="text-white/40 text-xs">* Du 1er janvier au 31 décembre de l'année en cours.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-white/50 text-sm mt-10 text-center italic">Niveau attribué après échange avec votre conseiller, selon volume et engagement.</p>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  PROCESS                                                     ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section id="process" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="max-w-3xl mb-16 fade-up">
+      <div class="text-mute text-xs uppercase tracking-widest mb-4">Ouvrir un compte</div>
+      <h2 class="display text-navy font-bold text-3xl md:text-5xl leading-[1.05] tracking-tight">
+        4 étapes pour passer au PRO.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
+      <div class="fade-up">
+        <div class="step-num mb-2">01</div>
+        <h3 class="display text-navy font-semibold text-xl mb-3">Premier contact</h3>
+        <p class="text-ink/70 leading-relaxed">Échange téléphonique pour cadrer vos besoins — catégories, volumes, fréquences.</p>
+      </div>
+      <div class="fade-up">
+        <div class="step-num mb-2">02</div>
+        <h3 class="display text-navy font-semibold text-xl mb-3">Proposition personnalisée</h3>
+        <p class="text-ink/70 leading-relaxed">Réception de votre grille tarifaire ajustée et de votre niveau de partenariat.</p>
+      </div>
+      <div class="fade-up">
+        <div class="step-num mb-2">03</div>
+        <h3 class="display text-navy font-semibold text-xl mb-3">Constitution du dossier</h3>
+        <p class="text-ink/70 leading-relaxed">Formulaire en ligne (10 min) + upload des pièces : KBIS, CNI, permis, RIB.</p>
+      </div>
+      <div class="fade-up">
+        <div class="step-num mb-2">04</div>
+        <h3 class="display text-navy font-semibold text-xl mb-3">Activation du compte</h3>
+        <p class="text-ink/70 leading-relaxed">Signature électronique, dépôt de garantie en ligne. <strong>Opérationnel sous 48 h.</strong></p>
+      </div>
+    </div>
+
+    <div class="mt-16 border border-navy/15 rounded-lg p-6 md:p-8 bg-white fade-up">
+      <div class="text-mute text-xs uppercase tracking-widest mb-3">Pièces à fournir</div>
+      <p class="text-ink/80 leading-relaxed">
+        KBIS de moins de 3 mois · CNI du gérant · Permis de conduire en cours de validité · RIB · Grille tarifaire et CGL signées · Mandat de prélèvement signé.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  POURQUOI NOUS                                               ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section class="py-20 md:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="max-w-3xl mb-14 fade-up">
+      <div class="text-mute text-xs uppercase tracking-widest mb-4">Pourquoi nous</div>
+      <h2 class="display text-navy font-bold text-3xl md:text-5xl leading-[1.05] tracking-tight">
+        CaribeCar opère la marque Rent-A-Car en Guadeloupe.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-px bg-navy/10 border border-navy/10 rounded-lg overflow-hidden">
+      <div class="bg-cream p-8 fade-up">
+        <h3 class="display font-semibold text-navy text-lg mb-3">Implantation locale</h3>
+        <p class="text-ink/70 text-sm leading-relaxed">Agence à l'<strong>Aéroport Pôle Caraïbes</strong> — Les Abymes.</p>
+      </div>
+      <div class="bg-cream p-8 fade-up">
+        <h3 class="display font-semibold text-navy text-lg mb-3">Filiale du groupe GBH</h3>
+        <p class="text-ink/70 text-sm leading-relaxed">La solidité et l'exigence opérationnelle d'un <strong>groupe régional de référence</strong>.</p>
+      </div>
+      <div class="bg-cream p-8 fade-up">
+        <h3 class="display font-semibold text-navy text-lg mb-3">Parc renouvelé</h3>
+        <p class="text-ink/70 text-sm leading-relaxed">Véhicules jeunes, entretenus aux standards <strong>Rent-A-Car France</strong>.</p>
+      </div>
+      <div class="bg-cream p-8 fade-up">
+        <h3 class="display font-semibold text-navy text-lg mb-3">Équipe locale dédiée</h3>
+        <p class="text-ink/70 text-sm leading-relaxed">Une équipe en Guadeloupe pour les pros guadeloupéens. <strong>Proximité, réactivité.</strong></p>
+      </div>
+      <div class="bg-cream p-8 fade-up">
+        <h3 class="display font-semibold text-navy text-lg mb-3">Engagement qualité</h3>
+        <p class="text-ink/70 text-sm leading-relaxed">Suivi de satisfaction continu et <strong>transparence sur les conditions</strong> de location.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  CTA + FORM TALLY                                            ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<section id="contact" class="py-20 md:py-28 bg-cream">
+  <div class="max-w-6xl mx-auto px-6 md:px-10">
+    <div class="max-w-2xl mb-12 fade-up">
+      <div class="text-mute text-xs uppercase tracking-widest mb-4">Contact</div>
+      <h2 class="display text-navy font-bold text-3xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+        Prêt à passer <span class="hl-underline">au PRO</span> ?
+      </h2>
+      <p class="text-lg text-ink/75 leading-relaxed">
+        Remplissez le formulaire en haut de page ou contactez directement Benjamin Jollois, votre interlocuteur dédié.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div class="fade-up border border-navy/15 rounded-lg p-6 bg-white">
+        <div class="text-xs uppercase tracking-widest text-mute mb-3">Votre contact dédié</div>
+        <div class="font-bold text-navy text-2xl mb-1">Benjamin Jollois</div>
+        <div class="text-ink/70 text-sm mb-5">Responsable d'agence — Rent-A-Car Guadeloupe</div>
+        <div class="flex flex-col gap-3 text-sm">
+          <a href="tel:+590690649474" class="flex items-center gap-3 text-ink hover:text-racred transition">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92Z"/></svg>
+            +590 690 64 94 74
+          </a>
+          <a href="mailto:benjamin.jollois@gbh.fr" class="flex items-center gap-3 text-ink hover:text-racred transition">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+            benjamin.jollois@gbh.fr
+          </a>
+        </div>
+      </div>
+
+      <div class="fade-up border border-navy/15 rounded-lg p-6 bg-white">
+        <div class="text-xs uppercase tracking-widest text-mute mb-3">Agence</div>
+        <div class="text-sm text-ink/70 leading-relaxed mb-5">
+          CaribeCar SAS — Aéroport Pôle Caraïbes — Morne Mamiel — 97139 Les Abymes<br>
+          Standard : 0590 47 59 05 · SIRET 442 315 503 00031
+        </div>
+        <a href="#hero-form" class="cta-primary inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg">
+          Utiliser le formulaire en ligne
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  FOOTER                                                      ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<footer class="bg-navydark text-white/70 py-12">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <div>
+        <div class="mb-3">
+          <img src="images/Logo Rent-A-Car PRO.png" alt="Rent-A-Car PRO" class="h-9 w-auto">
+        </div>
+        <p class="text-sm text-white/60 leading-relaxed">La mobilité professionnelle qui s'adapte à votre activité en Guadeloupe.</p>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-widest text-white/40 mb-3">Offre</div>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#avantages" class="hover:text-white">Avantages PRO</a></li>
+          <li><a href="#gamme" class="hover:text-white">Notre gamme</a></li>
+          <li><a href="#tarifs" class="hover:text-white">Forfaits Bronze / Argent / Gold</a></li>
+          <li><a href="#process" class="hover:text-white">Ouvrir un compte</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-widest text-white/40 mb-3">Contact</div>
+        <ul class="space-y-2 text-sm">
+          <li><a href="tel:+590690649474" class="hover:text-white">+590 690 64 94 74</a></li>
+          <li><a href="mailto:benjamin.jollois@gbh.fr" class="hover:text-white">benjamin.jollois@gbh.fr</a></li>
+          <li>Aéroport Pôle Caraïbes</li>
+          <li>97139 Les Abymes</li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-widest text-white/40 mb-3">Société</div>
+        <ul class="space-y-2 text-sm">
+          <li>CaribeCar SAS</li>
+          <li>SIRET 442 315 503 00031</li>
+          <li>Groupe GBH</li>
+          <li><a href="https://www.rentacarguadeloupe.fr" class="hover:text-white">rentacarguadeloupe.fr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 flex flex-wrap justify-between gap-4 text-xs text-white/50">
+      <div>© 2026 CaribeCar SAS — Tous droits réservés.</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white">Mentions légales</a>
+        <a href="#" class="hover:text-white">Confidentialité</a>
+        <a href="#" class="hover:text-white">Conditions générales de location</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll-triggered fade-ins
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
